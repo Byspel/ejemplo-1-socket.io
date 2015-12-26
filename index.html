@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejemplo RealTime con Socket.IO</title>
+	<script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+	<label for="txtRealTime">Mostrar:</label>
+	<input type="text" id="txtRealTime">
+	<script>
+	var socket = io('http://localhost');
+	socket.on('Evento1', function  (data) {
+		document.getElementById('txtRealTime').value = data.saludo;
+	});
+	</script>
+</body>
+</html>
